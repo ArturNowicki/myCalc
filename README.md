@@ -1,1 +1,2 @@
 # myCalc
+sample JavaFX calculator
