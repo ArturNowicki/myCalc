@@ -44,7 +44,7 @@
       <HBox prefHeight="60.0" prefWidth="270.0" spacing="10.0">
          <children>
             <Button fx:id="btn0" mnemonicParsing="false" onAction="#processNumber" prefHeight="60.0" prefWidth="60.0" text="0" />
-            <Button fx:id="btnComma" mnemonicParsing="false" onAction="#processSymbol" prefHeight="60.0" prefWidth="60.0" text="," />
+            <Button fx:id="btnComma" mnemonicParsing="false" onAction="#processNumber" prefHeight="60.0" prefWidth="60.0" text="." />
             <Button fx:id="btnEquals" mnemonicParsing="false" onAction="#processSymbol" prefHeight="60.0" prefWidth="60.0" text="=" />
             <Button fx:id="btnDivide" mnemonicParsing="false" onAction="#processSymbol" prefHeight="60.0" prefWidth="60.0" text="/" />
          </children>

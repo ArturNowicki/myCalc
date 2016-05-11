@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
+import model.Calculations;
 
 public class MainController {
 
@@ -13,20 +13,18 @@ public class MainController {
 	@FXML
 	private Button btnEquals;
 	
-	private String operator="";
+	private String operator = "";
+	private String firstNumber = "";
+	private boolean isStart = true;
+	private Calculations calc = new Calculations();
 
-    @FXML
 	public void processNumber(ActionEvent event) {
 		Object source = event.getSource();
 		if(source instanceof Button) {
+			if(!isStart) answerField.clear();
 			answerField.appendText(((Button) source).getText());
+			isStart = true;
 		}
-	}
-
-    public void processKeyboard(ActionEvent event) {
-    	btnEquals.setOnAction(e -> {
-    		answerField.appendText(((Button) event.getSource()).getText());
-    	});
 	}
 
 	public void processSymbol(ActionEvent event) {
@@ -35,11 +33,12 @@ public class MainController {
 			String value = ((Button) source).getText();
 			if(!"=".equals(value)) {
 				operator = value;
-				answerField.appendText(operator);
+				firstNumber = answerField.getText();
+				answerField.clear();
 			} else {
-//				TODO calculate some shit
+				answerField.setText(calc.calculate(firstNumber, operator, answerField.getText()));
+				isStart=false;
 			}
-			
 		}
 	}
 }

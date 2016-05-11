@@ -17,24 +17,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/MainGUI.fxml"));
 		Scene scene = new Scene(root, 290, 400);
-		setGlobalEventHandler(root);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Calculator");
 		primaryStage.setResizable(false);
 		primaryStage.show();
-	}
-
-	private void setGlobalEventHandler(Parent root) {
-		root.addEventHandler(KeyEvent.KEY_PRESSED, ev -> {
-			if (ev.getCode() == KeyCode.ENTER)
-				fireButtonEvent(ev.getCode());
-			ev.consume();
-		});
-	}
-
-	private void fireButtonEvent(KeyCode code) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public static void main(String[] args) {
