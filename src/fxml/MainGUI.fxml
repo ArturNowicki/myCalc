@@ -7,16 +7,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="290.0" spacing="16.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+<VBox prefHeight="460.0" prefWidth="290.0" spacing="16.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <children>
-      <TextField fx:id="answerField" alignment="CENTER_RIGHT" editable="false">
+      <TextField fx:id="currentCalculation" alignment="CENTER_RIGHT" editable="false">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
       </TextField>
+      <TextField fx:id="answerField" alignment="CENTER_RIGHT" editable="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <HBox prefHeight="60.0" prefWidth="270.0" spacing="10.0" alignment="CENTER_RIGHT">
+         <children>
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#processControl" prefHeight="60.0" prefWidth="60.0" text="C" />
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#processControl" prefHeight="60.0" prefWidth="60.0" text="←" />
+         </children>
+      </HBox>
       <HBox prefHeight="60.0" prefWidth="270.0" spacing="10.0">
          <children>
             <Button fx:id="btn7" mnemonicParsing="false" onAction="#processNumber" prefHeight="60.0" prefWidth="60.0" text="7" />
